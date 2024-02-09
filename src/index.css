@@ -1,13 +1,34 @@
-body {
-  margin: 0;
-  font-family: -apple-system, BlinkMacSystemFont, 'Segoe UI', 'Roboto', 'Oxygen',
-    'Ubuntu', 'Cantarell', 'Fira Sans', 'Droid Sans', 'Helvetica Neue',
-    sans-serif;
-  -webkit-font-smoothing: antialiased;
-  -moz-osx-font-smoothing: grayscale;
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --blue-color: #0077b6;
+  --green-color: #1effbc;
+  --dark-blue-color: #001d3d;
+  --white-color: #edf2fb;
+  --black-color: #000814;
 }
 
-code {
-  font-family: source-code-pro, Menlo, Monaco, Consolas, 'Courier New',
-    monospace;
+.gradient-text {
+  @apply text-transparent bg-clip-text bg-gradient-to-br from-[var(--blue-color)] to-[var(--green-color)];
+}
+.gradient-background {
+  @apply bg-gradient-to-br from-[var(--blue-color)] to-[var(--green-color)];
+}
+.main-div {
+    @apply w-3/4 max-w-xl md:max-w-2xl m-auto rounded-lg border py-10 px-8;
+}
+.button {
+  @apply bg-gradient-to-r from-[var(--blue-color)] to-[var(--green-color)] rounded-md w-full py-2 px-6 text-white;
+}
+
+@layer base {
+  body {
+    @apply font-[Poppins];
+  }
+  h1 {
+    @apply text-xl md:text-2xl text-center font-medium m-2 pb-5;
+  }
+ 
 }
